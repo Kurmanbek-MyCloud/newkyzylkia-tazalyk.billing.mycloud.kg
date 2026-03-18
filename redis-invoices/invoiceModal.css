@@ -1,0 +1,322 @@
+/* Стили для модального окна (если еще используется) */
+.estate-invoice-modal-content {
+    border-radius: 16px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: none;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    padding-bottom: 0;
+    overflow: hidden;
+}
+
+/* Стили для полноценной страницы */
+.invoice-page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.invoice-page-header {
+    background: linear-gradient(135deg, #35aa47 0%, #359947 100%);
+    padding: 30px;
+    color: white;
+}
+
+.invoice-page-header h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.invoice-page-body {
+    padding: 30px;
+}
+
+.back-button {
+    margin-bottom: 20px;
+}
+
+.estate-invoice-modal-header {
+    background: linear-gradient(135deg, #35aa47 0%, #359947 100%);
+    border-bottom: none;
+    border-radius: 16px 16px 0 0;
+    padding: 20px 24px 15px 24px;
+    text-align: left;
+    color: white;
+}
+
+#estateInvoiceModalLabel {
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.estate-invoice-modal-body {
+    padding: 22px 24px 10px 24px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.estate-invoice-modal-group label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #222;
+}
+
+.estate-invoice-modal-btn {
+    min-width: 180px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 12px;
+    background: #1e3a8a;
+    color: white;
+    border: none;
+    box-shadow: 0 4px 12px rgba(30,58,138,0.2);
+    transition: all 0.3s ease;
+    padding: 12px 30px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.estate-invoice-modal-btn:hover {
+    background: #1e40af;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(30,58,138,0.3);
+    color: white;
+}
+
+.estate-invoice-modal-checkboxes label {
+    margin-right: 12px;
+}
+
+#streetDropdown, #localityDropdown {
+    color: #222 !important;
+    background: #fff !important;
+    min-height: 40px !important;
+    font-size: 1em !important;
+}
+#streetDropdown input[type="checkbox"] {
+    accent-color: #1976d2;
+}
+
+.custom-multiselect-dropdown {
+    /* ... */
+}
+
+/* Стили для новых элементов */
+#scheduledDateTime {
+    border: 1px solid #d6d6d6;
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 1rem;
+}
+
+/* Стили для очереди задач */
+#taskQueueSection {
+    margin-top: 20px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 1px solid #dee2e6;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+#taskQueueSection label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #495057;
+    font-size: 1.2rem;
+}
+
+#toggleTaskQueue {
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    background: linear-gradient(135deg, #d97706 0%, #ea580c 100%);
+    color: white;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(217,119,6,0.2);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    width: 100%;
+    margin-top: 8px;
+}
+
+#toggleTaskQueue:hover {
+    background: linear-gradient(135deg, #b45309 0%, #c2410c 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(217,119,6,0.3);
+}
+
+#toggleTaskQueue:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(217,119,6,0.2);
+}
+
+#taskQueueCount {
+    margin-left: 10px;
+    font-size: 0.8rem;
+    background: #1e3a8a;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(30,58,138,0.2);
+}
+
+#taskQueueTable {
+    font-size: 1.1rem;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    background: white;
+}
+
+#taskQueueTable th {
+    background: #1e3a8a;
+    font-weight: 600;
+    color: white;
+    border: none;
+    padding: 15px 10px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 1rem;
+}
+
+#taskQueueTable td {
+    vertical-align: middle;
+    border-bottom: 1px solid #f1f3f4;
+    padding: 12px 10px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+#taskQueueTable tbody tr:hover {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    transform: scale(1.01);
+    transition: all 0.2s ease;
+}
+
+.progress {
+    background-color: #e9ecef;
+    border-radius: 10px;
+    height: 20px;
+    overflow: hidden;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, #35aa47 0%, #359947 100%);
+    transition: width 0.5s ease;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.badge {
+    font-size: 0.95rem;
+    padding: 10px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.badge-primary {
+    background: #1e3a8a;
+    color: white;
+}
+
+.badge-info {
+    background: #1e3a8a;
+    color: white;
+}
+
+.badge-danger {
+    background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+    color: white;
+}
+
+.badge-warning {
+    background: linear-gradient(135deg, #d97706 0%, #ea580c 100%);
+    color: white;
+}
+
+.badge-success {
+    background: linear-gradient(135deg, #35aa47 0%, #359947 100%);
+    color: white;
+}
+
+.badge-secondary {
+    background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+    color: white;
+}
+
+/* Стили для кнопок удаления */
+#taskQueueTable .btn-danger {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: none;
+    background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(220,38,38,0.2);
+    min-width: 80px;
+    min-height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+#taskQueueTable .btn-danger:hover {
+    background: linear-gradient(135deg, #b91c1c 0%, #dc2626 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(220,38,38,0.3);
+}
+
+#taskQueueTable .btn-danger:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(220,38,38,0.2);
+}
+
+
+
+@media (max-width: 600px) {
+    .estate-invoice-modal-content, .estate-invoice-modal-header, .estate-invoice-modal-body {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+    #estateInvoiceModalLabel {
+        font-size: 1.05rem;
+    }
+} 
+
+/* #streetDropdownContainer {
+    display: block !important;
+}  */

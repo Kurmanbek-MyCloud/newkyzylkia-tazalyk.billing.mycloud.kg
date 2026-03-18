@@ -1,0 +1,95 @@
+# ===========================================
+# Toktogul Billing CRM - .gitignore
+# ===========================================
+
+Dockerfile
+docker-compose.yml
+modules/Invoice/test.txt
+
+# ================== DATABASE ==================
+# SQL дампы и бэкапы базы данных
+*.sql
+!libraries/**/*.sql
+!schema/**/*.sql
+
+# ================== BACKUPS ==================
+*.tar.gz
+*.tar
+*.zip
+*.bak
+*.backup
+
+# ================== DATA FILES ==================
+# Excel файлы с данными
+*.xlsx
+*.xls
+*.csv
+
+# ================== CONFIGS WITH SECRETS ==================
+# Конфиги с паролями и секретами (используйте .example файлы)
+config.inc.php
+config_override.php
+config.csrf-secret.php
+.env
+**/.env
+
+# ================== USER DATA ==================
+# Привилегии пользователей
+user_privileges/
+
+# ================== CACHE & LOGS ==================
+cache/
+logs/
+*.log
+# Исключение: системный файл кэша (нужен для работы)
+!includes/runtime/cache/
+!includes/runtime/cache/Connector.php
+
+# ================== STORAGE ==================
+# Загруженные файлы и данные
+storage/
+gupshup_logs/
+
+# ================== DB DUMP ==================
+# Папка для дампа БД (локальная разработка)
+db_dump/
+
+# ================== UPLOADED FILES ==================
+PHPExcel/*.xlsx
+page_loader_elehant/files/
+excelFiles/*.xlsx
+excelFiles/*.xls
+excelFiles/*.csv
+
+# ================== IMPORT DATA ==================
+unverified_import/
+
+# ================== BOT ==================
+# Telegram bot (отдельный проект)
+bot/
+bot_old/
+
+# ================== TEST & TEMP ==================
+test/templates_c/
+cronfile/
+
+# ================== IDE & OS ==================
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ================== DEPENDENCIES ==================
+# Composer dependencies
+vendor/
+vendor_backup/
+
+# DB dump (большой файл, не хранить в git)
+deploy_billing/dump.sql
+
+# Node modules (везде в проекте)
+node_modules/
+**/node_modules/
+modules/Invoice/test.txt

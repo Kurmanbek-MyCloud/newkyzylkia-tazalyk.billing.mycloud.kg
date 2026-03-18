@@ -1,0 +1,29 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vtiger_payments</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_payments` (
+  `paymentsid` int(19) NOT NULL,
+  `amount` decimal(10,2) DEFAULT NULL,
+  `cf_pay_date` date DEFAULT NULL,
+  `cf_pay_type` varchar(255) DEFAULT '',
+  `cf_txnid` varchar(255) DEFAULT '',
+  `cf_status` varchar(255) DEFAULT '',
+  `cf_paid_service` varchar(255) DEFAULT '',
+  `cf_payer` int(10) DEFAULT NULL,
+  `cf_payment_type` varchar(255) DEFAULT '',
+  `cf_payment_source` varchar(255) DEFAULT '',
+  `cf_paid_object` int(10) DEFAULT NULL,
+  PRIMARY KEY (`paymentsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci]]></sql>
+		</table>
+		<table>
+			<name>vtiger_paymentscf</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_paymentscf` (
+  `paymentsid` int(19) NOT NULL,
+  PRIMARY KEY (`paymentsid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci]]></sql>
+		</table>
+	</tables>
+</schema>

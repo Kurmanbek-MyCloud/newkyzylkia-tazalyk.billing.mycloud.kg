@@ -1,0 +1,134 @@
+body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+h2 {
+    color: #4A4A4A;
+    margin-bottom: 20px;
+}
+
+select, input[type="date"], button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 5px;
+    font-size: 16px;
+}
+
+.input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 5px;
+    font-size: 16px;
+}
+
+select:focus, input[type="date"]:focus, button:focus {
+    outline: none;
+    border-color: #5b9bd5; /* Цвет рамки при фокусе */
+}
+
+button {
+    background-color: #5b9bd5; /* Цвет фона кнопок */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #4a8dc7; /* Цвет фона кнопок при наведении */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: #4A90E2; /* Цвет заголовка таблицы */
+    color: white;
+}
+
+td {
+    background-color: #ffffff;
+}
+
+td:hover {
+    background-color: #f9f9f9; /* Цвет ячейки при наведении */
+}
+
+input[type="date"] {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.sort-arrow {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-left: 5px;
+}
+
+.asc .sort-arrow::after {
+    content: "▲"; /* Стрелка вверх для сортировки по возрастанию */
+    font-size: 12px;
+}
+
+.desc .sort-arrow::after {
+    content: "▼"; /* Стрелка вниз для сортировки по убыванию */
+    font-size: 12px;
+}
+
+.pagination {
+    list-style: none;
+    display: flex; /* Используем flexbox для горизонтального расположения */
+    justify-content: center; /* Центрируем пагинацию */
+    padding: 0; /* Убираем отступы */
+    margin: 20px 0; /* Отступы сверху и снизу для красоты */
+}
+
+.pagination li {
+    margin: 0 5px; /* Отступы между элементами пагинации */
+}
+
+.pagination a, .pagination span {
+    text-decoration: none; /* Убираем подчеркивание */
+    padding: 5px 10px; /* Отступы вокруг текста */
+    border: 1px solid #ccc; /* Граница */
+    border-radius: 5px; /* Скругление углов */
+    background-color: #f9f9f9; /* Фоновый цвет */
+    color: #333; /* Цвет текста */
+}
+
+.pagination a:hover {
+    background-color: #e0e0e0; /* Изменение фона при наведении */
+}
+
+.pagination strong {
+    font-weight: bold; /* Выделяем текст текущей страницы */
+    color: #333; /* Цвет текста */
+}
+
+.limit-input{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 5px;
+    font-size: 16px;
+
+
+}

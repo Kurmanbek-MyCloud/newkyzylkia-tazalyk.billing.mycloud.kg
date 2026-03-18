@@ -1,0 +1,9 @@
+{
+	"crmlogin":"irsaliev",
+	"key" : "EUmPBhLZFmGXsFsD",
+	"CRM_URL":"https://ecologist.billing.mycloud.kg/webservice.php",
+	"db_host" : "localhost",
+	"db_user" : "ecologist_admin",
+	"db_pass" : "8TJaAPU8cN7m5Z9",
+	"db_name" : "ecologist_db"
+}

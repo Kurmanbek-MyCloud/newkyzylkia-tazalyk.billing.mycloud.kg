@@ -1,0 +1,25 @@
+.account-label, .balance-label, .debt-label {
+    font-weight: bold;
+    font-size: 12px;
+    color: slategray;
+    text-transform: uppercase;
+}
+
+.account-value, .balance-value, .debt-value {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#show_hide_ticket_charts {
+    display: inline-block;
+    padding: 0 10px;
+    border: 1px solid lightgrey;
+    border-top: 0;
+    border-radius:  0 0 5px 5px;
+    color: grey;
+}
+
+#show_hide_ticket_charts:hover {
+    cursor: pointer;
+    color: orange;
+}

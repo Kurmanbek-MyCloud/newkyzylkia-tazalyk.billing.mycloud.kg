@@ -1,0 +1,36 @@
+#mentions_wrp {
+	position: absolute;
+	bottom: 100%;
+	left: 10px;
+	width: 230px;
+	z-index: 10000;
+	background-color: #fff;
+	border: 1px solid #999;
+}
+#mentions_empty {
+	text-align: center;
+	color: #666;
+	margin: 10px 0;
+	padding: 0;
+	font-size: 11px;
+}
+.mentions_parent {
+	position: relative;
+}
+#mentions_menu {
+	margin: 0;
+	padding: 0;
+}
+#mentions_menu > li {
+	height: 32px;
+	cursor: pointer;
+	padding: 0 10px;
+	display: block;
+	line-height: 32px;
+	transition: background-color .355s linear, color .355s linear;
+	-webkit-transition: background-color .355s linear, color .355s linear;
+}
+#mentions_menu > li:hover {
+	background-color: #f5f6f7;
+	color: #435267;
+}

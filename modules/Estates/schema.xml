@@ -1,0 +1,28 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vtiger_estates</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_estates` (
+  `estatesid` int(19) NOT NULL,
+  `estate_number` varchar(255) DEFAULT NULL,
+  `cf_balance` decimal(13,2) DEFAULT NULL,
+  `cf_deactivated` varchar(3) DEFAULT '0',
+  `cf_estate_type` varchar(255) DEFAULT '',
+  `cf_object_type` varchar(255) DEFAULT '',
+  `cf_house_number` int(10) DEFAULT NULL,
+  `cf_litera` varchar(10) DEFAULT '',
+  `cf_apartment_number` int(5) DEFAULT NULL,
+  `cf_contact_id` varchar(10) DEFAULT '',
+  PRIMARY KEY (`estatesid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci]]></sql>
+		</table>
+		<table>
+			<name>vtiger_estatescf</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_estatescf` (
+  `estatesid` int(19) NOT NULL,
+  PRIMARY KEY (`estatesid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci]]></sql>
+		</table>
+	</tables>
+</schema>

@@ -1,0 +1,31 @@
+{
+    "name": "vtiger/vtigercrm",
+    "description": "Vtiger CRM",
+    "type": "project",
+    "license": "VPL",
+    "authors": [
+        {
+            "name": "Vtiger",
+            "email": "info@vtiger.com"
+        }
+    ],
+    "autoload": {
+        "files": ["includes/Loader.php"]
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=7.2.0",
+        "ext-mysqli": "*",
+        "ext-curl": "*",
+        "smarty/smarty": "^4.3",
+        "dg/rss-php": "^1.5",
+        "ezyang/htmlpurifier": "^4.16",
+        "tecnickcom/tcpdf": "^6.6",
+        "monolog/monolog": "^3.5",
+        "phpoffice/phpspreadsheet": "^2.0",
+        "endroid/qr-code": "^5.0",
+        "picqer/php-barcode-generator": "^2.4",
+        "box/spout": "^3.3",
+        "dompdf/dompdf": "^3.1"
+    }
+}

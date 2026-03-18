@@ -1,0 +1,29 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vtiger_space</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_space` (
+  `spaceid` int(19) NOT NULL,
+  `floor_number` int(11) DEFAULT NULL,
+  `space_status` varchar(255) DEFAULT NULL,
+  `organization_name` int(11) DEFAULT NULL,
+  `imagename` varchar(150) DEFAULT NULL,
+  `autocenter_logo` varchar(100) DEFAULT NULL,
+  `x_coords` varchar(255) DEFAULT NULL,
+  `y_coords` varchar(255) DEFAULT NULL,
+  `width_coords` varchar(255) DEFAULT NULL,
+  `height_coords` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`spaceid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+		<table>
+			<name>vtiger_spacecf</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_spacecf` (
+  `spaceid` int(19) NOT NULL,
+  `cf_1598` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`spaceid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+	</tables>
+</schema>

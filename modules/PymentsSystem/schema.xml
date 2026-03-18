@@ -1,0 +1,31 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vtiger_pymentssystem</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_pymentssystem` (
+  `pymentssystemid` int(19) NOT NULL,
+  `payer_title` varchar(255) DEFAULT NULL,
+  `cf_payer_token` varchar(255) DEFAULT NULL,
+  `cf_payer_ip_1` varchar(255) DEFAULT NULL,
+  `cf_payer_ip_2` varchar(255) DEFAULT NULL,
+  `cf_payer_ip_3` varchar(255) DEFAULT NULL,
+  `cf_deeplink_check` varchar(255) DEFAULT '',
+  `cf_deeplinkid` bigint(19) DEFAULT NULL,
+  `cf_deeplink_username` varchar(62) DEFAULT '',
+  `cf_deeplink_password` varchar(62) DEFAULT '',
+  `cf_service_id` varchar(255) DEFAULT '',
+  `cf_server_address` varchar(255) DEFAULT '',
+  `cf_deeplink_image` varchar(62) DEFAULT NULL,
+  PRIMARY KEY (`pymentssystemid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+		<table>
+			<name>vtiger_pymentssystemcf</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_pymentssystemcf` (
+  `pymentssystemid` int(19) NOT NULL,
+  PRIMARY KEY (`pymentssystemid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+	</tables>
+</schema>

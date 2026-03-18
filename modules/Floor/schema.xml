@@ -1,0 +1,21 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vtiger_floor</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_floor` (
+  `floorid` int(19) NOT NULL,
+  `floor_number` int(11) DEFAULT NULL,
+  `floor_plan` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`floorid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+		<table>
+			<name>vtiger_floorcf</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_floorcf` (
+  `floorid` int(19) NOT NULL,
+  PRIMARY KEY (`floorid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+	</tables>
+</schema>

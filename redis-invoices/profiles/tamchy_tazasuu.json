@@ -1,0 +1,13 @@
+{
+  "name": "Тамчы ТазаСуу",
+  "group_id": 58,
+  "account_filter_id": null,
+  "reading_period": "next_month",
+  "handler_file": "mp_handlers/tamchy_tazasuu.php",
+  "handler_function": "processTamchyTazasuuInvoice",
+  "services": {
+    "3868": { "calc": "by_meters", "label": "Водоснабжение" },
+    "3869": { "calc": "by_residents", "label": "Вывоз мусора" },
+    "3870": { "calc": "fixed", "label": "Обслуживание" }
+  }
+}

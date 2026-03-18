@@ -1,0 +1,68 @@
+.estate-invoice-modal-content {
+    border-radius: 4px;
+    background: #fff;
+    border: 1px solid #d6d6d6;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding-bottom: 0;
+}
+
+.estate-invoice-modal-header {
+    background: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    border-radius: 4px 4px 0 0;
+    padding: 18px 24px 10px 24px;
+    text-align: left;
+}
+
+#estateInvoiceModalLabel {
+    color: #222;
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+}
+
+.estate-invoice-modal-body {
+    padding: 22px 24px 10px 24px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.estate-invoice-modal-group label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #222;
+}
+
+.estate-invoice-modal-btn {
+    min-width: 150px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 4px;
+    background: #1976d2;
+    color: #fff;
+    border: none;
+    box-shadow: none;
+    transition: background 0.2s;
+    padding: 8px 24px;
+}
+
+.estate-invoice-modal-btn:hover {
+    background: #1565c0;
+    color: #fff;
+}
+
+.estate-invoice-modal-checkboxes label {
+    margin-right: 12px;
+}
+
+@media (max-width: 600px) {
+    .estate-invoice-modal-content, .estate-invoice-modal-header, .estate-invoice-modal-body {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+    #estateInvoiceModalLabel {
+        font-size: 1.05rem;
+    }
+} 

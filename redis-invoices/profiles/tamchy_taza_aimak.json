@@ -1,0 +1,11 @@
+{
+  "name": "Таза Аймак",
+  "group_id": 59,
+  "account_filter_id": null,
+  "reading_period": "last_two",
+  "handler_file": "mp_handlers/tamchy_taza_aimak.php",
+  "handler_function": "processTamchyTazaAimakInvoice",
+  "services": {
+    "16900": { "calc": "fixed", "label": "Фиксированная услуга" }
+  }
+}

@@ -1,0 +1,23 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vtiger_penalty</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_penalty` (
+  `penaltyid` int(19) NOT NULL,
+  `penalty_amount` decimal(7,2) DEFAULT NULL,
+  `cf_to_ivoice` int(10) DEFAULT NULL,
+  `cf_type_penalty` varchar(255) DEFAULT NULL,
+  `cf_penalty_description` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`penaltyid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci]]></sql>
+		</table>
+		<table>
+			<name>vtiger_penaltycf</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_penaltycf` (
+  `penaltyid` int(19) NOT NULL,
+  PRIMARY KEY (`penaltyid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci]]></sql>
+		</table>
+	</tables>
+</schema>
