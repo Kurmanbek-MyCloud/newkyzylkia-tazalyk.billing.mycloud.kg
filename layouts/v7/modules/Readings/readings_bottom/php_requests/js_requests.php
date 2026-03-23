@@ -25,7 +25,7 @@ define('KEY', 'Ea5AGXKCAcu7GHxg');
 // $assigned_user_id = 30;
 
 $current_user = Users::getActiveAdminUser();
-$logger = new CustomLogger('bot/php_requests/bot_ticket_handler.log');
+$logger = new CustomLogger('bot/php_requests/bot_ticket_handler');
 
 // if ($input['action'] == 'getMetersInfo') {
 //   $estatesid = $input['estatesid'];

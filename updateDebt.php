@@ -14,7 +14,7 @@ global $adb;
 global $current_user;
 $current_user = Users::getActiveAdminUser();
 
-$logger = new CustomLogger('updateDebt.log');
+$logger = new CustomLogger('updateDebt');
 
 
 // Обновление задолженности по дому

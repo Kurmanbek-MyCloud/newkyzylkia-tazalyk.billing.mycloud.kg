@@ -41,4 +41,6 @@ $languageStrings = array(
     'Lastname' => 'ФИО абонента',
     'beneficiary' => 'Льготник',
     'Contract date' => 'Дата заключения контракта',
+    'second_address' => 'Дополнительный адрес',
+    'contract_amount' => 'Тариф',
 );

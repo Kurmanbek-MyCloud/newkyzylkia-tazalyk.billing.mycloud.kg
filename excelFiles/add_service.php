@@ -17,7 +17,7 @@ $current_user = Users::getActiveAdminUser();
 
 // use PhpOffice\PhpSpreadsheet\IOFactory;
 
-$logger = new CustomLogger('excelFiles/excelreader_services.log');
+$logger = new CustomLogger('excelFiles/excelreader_services');
 
 
 $res = $adb->pquery("SELECT ve.estate_number FROM vtiger_estates ve 

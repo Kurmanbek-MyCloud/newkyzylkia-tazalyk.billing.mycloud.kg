@@ -39,7 +39,7 @@ try {
 }
 
 // Инициализируем логгер
-$logger = new CustomLogger('excelFiles/karajygach/add_service_karajygach.log');
+$logger = new CustomLogger('excelFiles/karajygach/add_service_karajygach');
 $logger->log("Начало обработки файла: $path");
 
 $headerMap = [];

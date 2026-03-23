@@ -61,7 +61,7 @@ chdir($rootPath);
 // Подключаем только Logger для логирования
 require_once 'Logger.php';
 
-$logger = new CustomLogger("redis-invoices/workers/worker_{$MP_ID}.log");
+$logger = new CustomLogger("redis-invoices/workers/worker_{$MP_ID}");
 
 echo "=== ВОРКЕР МП $MP_ID ГОТОВ ===\n";
 
@@ -122,7 +122,7 @@ function checkScheduledTasks($redis, $mpId) {
                 $redis->lRem($scheduledKey, $taskJson, 1);
                 $movedCount++;
                 
-                $logger = new CustomLogger("redis-invoices/workers/worker_{$mpId}.log");
+                $logger = new CustomLogger("redis-invoices/workers/worker_{$mpId}");
                 $logger->log("⏰ Запланированная задача Object ID {$task['objectID']} перемещена в очередь (МП: $mpId, запланировано: {$task['scheduledTime']})");
             }
         }

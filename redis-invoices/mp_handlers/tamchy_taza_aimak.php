@@ -23,7 +23,7 @@ $adb->connect();
 // Инициализируем пользователя глобально
 require_once $rootPath . 'modules/Users/Users.php';
 $current_user = Users::getActiveAdminUser();
-$logger = new CustomLogger(__DIR__ . '/tamchy_taza_aimak.log');
+$logger = new CustomLogger('redis-invoices/mp_handlers/tamchy_taza_aimak');
 
 /**
  * Проверка подключения к БД и переподключение если соединение умерло.

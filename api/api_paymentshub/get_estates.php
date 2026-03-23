@@ -14,7 +14,7 @@ include_once 'includes/http/Request.php';
 global $current_user;
 global $adb;
 
-$logger = new CustomLogger('api_paymentshub/get_estates.log');
+$logger = new CustomLogger('api_paymentshub/get_estates');
 $current_user = Users::getActiveAdminUser();
 
 // Выполняем SQL-запрос

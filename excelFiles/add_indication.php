@@ -13,7 +13,7 @@ $current_user = Users::getActiveAdminUser();
 use PhpOffice\PhpSpreadsheet\IOFactory;
 
 // Инициализация логгера
-$logger = new CustomLogger('excelFiles/add_indication.log');
+$logger = new CustomLogger('excelFiles/add_indication');
 $path = "excelFiles/показания.xlsx";
 
 if (!file_exists($path)) {

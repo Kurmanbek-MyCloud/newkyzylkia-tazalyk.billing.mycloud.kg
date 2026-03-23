@@ -13,7 +13,7 @@ $current_user = Users::getActiveAdminUser();
 use PhpOffice\PhpSpreadsheet\IOFactory;
 
 // Инициализация логгера
-$logger = new CustomLogger('excelFiles/add_servis.log');
+$logger = new CustomLogger('excelFiles/add_servis');
 $path = "excelFiles/cleaned.xlsx";
 
 if (!file_exists($path)) {

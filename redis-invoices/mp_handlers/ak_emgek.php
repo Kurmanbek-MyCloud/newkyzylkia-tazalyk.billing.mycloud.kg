@@ -20,7 +20,7 @@ $adb->connect();
 
 require_once $rootPath . 'modules/Users/Users.php';
 $current_user = Users::getActiveAdminUser();
-$logger = new CustomLogger(__DIR__ . '/ak_emgek.log');
+$logger = new CustomLogger('redis-invoices/mp_handlers/ak_emgek');
 
 /**
  * Проверка подключения к БД и переподключение если соединение умерло.

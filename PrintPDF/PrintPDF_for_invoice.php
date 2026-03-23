@@ -20,7 +20,7 @@ require_once 'libraries/tcpdf/tcpdf.php';
 require 'vendor/autoload.php';
 require_once 'Logger.php';
 
-$logger = new CustomLogger('PrintPDF/PrintPDF.log');
+$logger = new CustomLogger('PrintPDF/PrintPDF');
 $logger->log('test');
 
 

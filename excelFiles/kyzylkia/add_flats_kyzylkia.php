@@ -17,7 +17,7 @@ use Box\Spout\Reader\Common\Creator\ReaderEntityFactory;
 global $adb, $current_user;
 $current_user = Users::getActiveAdminUser();
 
-$path = "excelFiles/karajygach/flats_and_contacts_karajygach.csv"; // Укажите путь к вашему файлу
+$path = "excelFiles/kyzylkia/flats_kyzylkia.csv"; // Укажите путь к вашему файлу
 
 
 
@@ -39,13 +39,13 @@ try {
 }
 
 // Инициализируем логгер
-$logger = new CustomLogger('excelFiles/karajygach/add_flats_karajygach');
+$logger = new CustomLogger('excelFiles/kyzylkia/add_flats_kyzylkia');
 $logger->log("Начало обработки файла: $path");
 
 $headerMap = [];
 $recordCounter = 0;
 
-$maxRecords = 1526; // Максимальное количество записей для обработки
+$maxRecords = 2; // Максимальное количество записей для обработки
 
 foreach ($reader->getSheetIterator() as $sheet) {
   foreach ($sheet->getRowIterator() as $row) {
@@ -71,19 +71,18 @@ foreach ($reader->getSheetIterator() as $sheet) {
     // Извлекаем данные из колонок
     $ls = $col('cf_1420');
     $house_number = $col('flat');
+    $litera = $col('flats_litera');
     $apartment_number = $col('cf_1446');
-    $street = $col('cf_1448');
-    $type_object = $col('cf_1444');    // дом или квартира
-    $lgotnik = $col('cf_1497');   // льготник
-    $nas_punkt = $col('cf_1450');   
-    $plot = $col('cf_1452');   
-    $kol_people = $col('cf_1261');   
-    $fio = $col('lastname');   
-    $tip_lico = $col('cf_1458');   
-
-    $deactivated = $col('cf_1454');   
-
-
+    $type_doma = $col('cf_1444');       // кв/дом
+    $deactivate = $col('cf_1454');      
+    $type_lico = $col('cf_cf_object_type');      
+    $nas_punkt = $col('cf_1450');      
+    $plot = $col('cf_1452');      
+    $dop_adress = $col('cf_second_address');      
+    $street = $col('cf_1448');      
+    $lastname = $col('lastname');       // собственник
+    $kol_people = $col('cf_1261');      
+    $mobile = $col('mobile');       // Количество проживающих
 
 
 
@@ -97,8 +96,7 @@ foreach ($reader->getSheetIterator() as $sheet) {
     }
 
 
-    add_estates($logger, $adb, $recordCounter, $ls, $house_number, $apartment_number, $street, 
-    $type_object, $lgotnik, $nas_punkt, $plot, $kol_people, $fio, $tip_lico, $deactivated);
+    add_estates($logger, $adb, $recordCounter, $ls, $house_number, $litera, $apartment_number, $type_doma, $deactivate, $type_lico, $nas_punkt, $plot, $dop_adress, $street, $lastname, $kol_people, $mobile);
 
     if ($recordCounter >= $maxRecords) {
       // $logger->log("Достигнуто максимальное количество записей: $maxRecords. Завершаем обработку.");
@@ -113,17 +111,12 @@ $logger->log("Обработка файла завершена. Всего об�
 echo "\nОбработка завершена!\n";
 
 
-function add_estates($logger, $adb, $recordCounter, $ls, $house_number, $apartment_number, $street, 
-    $type_object, $lgotnik, $nas_punkt, $plot, $kol_people, $fio, $tip_lico, $deactivated)
+function add_estates($logger, $adb, $recordCounter, $ls, $house_number, $litera, $apartment_number, 
+$type_doma, $deactivate, $type_lico, $nas_punkt, $plot, $dop_adress, $street, $lastname, $kol_people, $mobile)
 {
-  // При отправке на гит ПОСТАВИТЬ креды сервера
-  // Боевой
-  $assigned_user_id = 89;
-  $cf_municipal_enterprise = 53936;
 
-  // Тестовый
-  // $assigned_user_id = 89;
-  // $cf_municipal_enterprise = 51854;
+  $cf_municipal_enterprise = 53939;
+
 
   $check_result = $adb->pquery("SELECT ve.estatesid FROM vtiger_estates ve
                   INNER JOIN vtiger_crmentity vc on vc.crmid = ve.estatesid
@@ -133,32 +126,25 @@ function add_estates($logger, $adb, $recordCounter, $ls, $house_number, $apartme
 
   if (empty($estates_id)) {
     $estate_record = Vtiger_Record_Model::getCleanInstance("Estates");
-    // $estate_record->set('estate_number', $ls);
-    $estate_record->set('cf_lastname', $fio);
+
+    $estate_record->set('estate_number', $ls);
+    $estate_record->set('cf_house_number', $house_number);
+    $estate_record->set('cf_litera', $litera);
+    $estate_record->set('cf_apartment_number', $apartment_number);
+    $estate_record->set('cf_number_of_residents', $kol_people);
+    $estate_record->set('cf_lastname', $lastname);
+    $estate_record->set('cf_deactivated', $deactivate);
+    $estate_record->set('cf_object_type', $type_lico);
+    $estate_record->set('cf_second_address', $dop_adress);
+    $estate_record->set('cf_mobile_phone', $mobile);
+
+    $estate_record->set('cf_municipal_enterprise', $cf_municipal_enterprise);
+    $estate_record->set('cf_plot', $plot);
     $estate_record->set('cf_inhabited_locality', $nas_punkt);
     $estate_record->set('cf_streets', $street);
-    // Разбиваем номер дома: числовая часть → cf_house_number, остаток → cf_litera
-    preg_match('/^(\d+)(.*)$/', trim($house_number ?? ''), $hm);
-    $house_number_int  = isset($hm[1]) ? (int)$hm[1] : null;
-    $house_litera      = !empty($hm[2]) ? trim($hm[2], " /") : null;
 
-    // Разбиваем номер квартиры: числовая часть → cf_apartment_number, остаток → cf_litera (если дом не дал литеру)
-    preg_match('/^(\d+)(.*)$/', trim($apartment_number ?? ''), $am);
-    $apartment_number_int  = isset($am[1]) ? (int)$am[1] : null;
-    $apartment_litera      = !empty($am[2]) ? trim($am[2], " /") : null;
-
-    $litera = $house_litera ?: $apartment_litera;
-
-    $estate_record->set('cf_house_number', $house_number_int);
-    $estate_record->set('cf_number_of_residents', $kol_people);
-    $estate_record->set('cf_object_type', $tip_lico);
-    $estate_record->set('cf_plot', $plot);
-    $estate_record->set('cf_apartment_number', $apartment_number_int);
-    $estate_record->set('cf_litera', $litera);
-    $estate_record->set('cf_deactivated', $deactivated);
-
-    $estate_record->set('assigned_user_id', $assigned_user_id);
-    $estate_record->set('cf_municipal_enterprise', $cf_municipal_enterprise);
+    $estate_record->set('cf_legal_entity_name', $);
+    $estate_record->set('cf_doc_number', $);
 
     $estate_record->set('mode', 'create');
     $estate_record->save();

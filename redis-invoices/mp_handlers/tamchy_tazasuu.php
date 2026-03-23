@@ -20,7 +20,7 @@ $adb->connect();
 
 require_once $rootPath . 'modules/Users/Users.php';
 $current_user = Users::getActiveAdminUser();
-$logger = new CustomLogger(__DIR__ . '/tamchy_taza_suu.log');
+$logger = new CustomLogger('redis-invoices/mp_handlers/tamchy_taza_suu');
 
 /**
  * Проверка подключения к БД и переподключение если соединение умерло.

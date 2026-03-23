@@ -26,8 +26,7 @@ require_once __DIR__ . '/../../../Logger.php';
 function assignCallToContact($ws_entity) {
     global $adb;
 
-    $logFilePath = __DIR__ . '/callsHandlers.log';
-    $logger = new CustomLogger($logFilePath);
+    $logger = new CustomLogger('modules/Calls/workflows/callsHandlers');
 
     $rawCrmId = $ws_entity->getId();
     $crmid = (strpos($rawCrmId, 'x') !== false) ? explode("x", $rawCrmId)[1] : $rawCrmId;

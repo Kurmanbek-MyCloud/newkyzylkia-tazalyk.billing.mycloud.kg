@@ -14,7 +14,7 @@ include_once 'includes/http/Request.php';
 
 global $current_user;
 global $adb;
-$logger = new CustomLogger('createInvoice/createInvoice.log');
+$logger = new CustomLogger('createInvoice/createInvoice');
 $current_user = Users::getActiveAdminUser();
 
 $res = $adb->pquery("SELECT * FROM vtiger_estates es 

@@ -15,7 +15,7 @@ $current_user = Users::getActiveAdminUser();
 
 use PhpOffice\PhpSpreadsheet\IOFactory;
 
-$logger = new CustomLogger('excelFiles/add_estates_service.log');
+$logger = new CustomLogger('excelFiles/add_estates_service');
 $path = "excelFiles/ak_emgek3.xlsx"; // ← укажи имя файла
 
 if (!file_exists($path)) {
