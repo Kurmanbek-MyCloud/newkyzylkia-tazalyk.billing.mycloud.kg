@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Приложение Абонентов</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="loadingMessage" class="screen">
+      <p id="loadingText">Загрузка...</p>
+    </div>
+
+    <div id="loginScreen" class="screen active">
+      <div class="top-bar">
+        <button id="logoutButtonLogin" class="icon-button logout-button" title="Выйти из муниципального предприятия">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16,17 21,12 16,7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+          </svg>
+        </button>
+        <h1 id="loginHeading" class="page-title">Вход</h1>
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <button id="terminalSettingsButtonLogin" class="icon-button settings-button" title="Настройки терминала">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+          </button>
+          <div class="language-selector-container">
+            <select id="languageSelector" class="language-selector">
+              <option value="ky" selected data-flag="🇰🇬" data-name="Кыргызча">🇰🇬</option>
+              <option value="ru" data-flag="🇷🇺" data-name="Русский">🇷🇺</option>
+              <option value="en" data-flag="🇺🇸" data-name="English">🇺🇸</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="container login-container">
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="login">Логин:</label>
+            <input type="text" id="login" name="login" required autocomplete="username" />
+          </div>
+          <div class="form-group">
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" required autocomplete="current-password" />
+          </div>
+          <button type="submit" id="loginButton" class="button button-primary">Войти</button>
+        </form>
+        <div id="message" class="message"></div>
+      </div>
+    </div>
+
+    <div id="searchScreen" class="screen">
+      <div class="top-bar">
+        <button id="logoutButtonSearch" class="icon-button logout-button" title="Выйти из системы">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16,17 21,12 16,7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+          </svg>
+        </button>
+        <div class="user-name-display">
+          <span id="controllerNameDisplay"></span>
+        </div>
+        <div class="language-selector-container">
+          <select id="languageSelectorSearch" class="language-selector">
+            <option value="ky" selected data-flag="🇰🇬" data-name="Кыргызча">🇰🇬</option>
+            <option value="ru" data-flag="🇷🇺" data-name="Русский">🇷🇺</option>
+            <option value="en" data-flag="🇺🇸" data-name="English">🇺🇸</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="searchContainer" class="container">
+        <form id="searchForm">
+          <!-- <div id="searchAddressTitle" class="section-title">Поиск по адресу</div>
+
+          <div class="form-group">
+            <label for="searchMunicipalEnterprise">Выберите Муниципальное предприятие:</label>
+            <select id="searchMunicipalEnterprise" name="mp_id">
+              <option value="">Выберите Муниципальное предприятие</option>
+            </select>
+          </div> -->
+
+          <div class="section-title" id="searchBySubscriberDataTitle">Поиск по данным абонента</div>
+
+          <div class="form-group">
+            <label for="searchAccount">Лицевой счет:</label>
+            <input type="text" id="searchAccount" name="account" placeholder="Введите номер лицевого счета" />
+          </div>
+
+          <div class="form-group">
+            <label for="searchFIO">ФИО:</label>
+            <input type="text" id="searchFIO" name="fio" placeholder="Введите ФИО (полностью или часть)" />
+          </div>
+
+          <button type="submit" class="button button-primary">Найти</button>
+        </form>
+
+        <div id="searchMessage" class="message"></div>
+      </div>
+    </div>
+
+    <div id="resultsScreen" class="screen">
+      <div class="top-bar">
+        <button id="backToSearchButton" class="icon-button back-button" title="Назад к поиску">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5"></path>
+            <polyline points="12,19 5,12 12,5"></polyline>
+          </svg>
+        </button>
+        <h2 id="resultsHeading" class="page-title">Результаты <span id="resultsCount"></span></h2>
+        <div class="language-selector-container">
+          <select id="languageSelectorResults" class="language-selector">
+            <option value="ky" selected data-flag="🇰🇬" data-name="Кыргызча">🇰🇬</option>
+            <option value="ru" data-flag="🇷🇺" data-name="Русский">🇷🇺</option>
+            <option value="en" data-flag="🇺🇸" data-name="English">🇺🇸</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="resultsContainer" class="container">
+        <div id="searchResultsList"></div>
+        <div id="pagination" class="pagination hidden">
+          <button id="prevPageButton" class="pagination-button" disabled>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M15 18l-6-6 6-6"></path>
+            </svg>
+          </button>
+          <span id="pageInfo">1 / 1</span>
+          <button id="nextPageButton" class="pagination-button" disabled>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 18l6-6-6-6"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./polyfills.js"></script>
+    <script src="./config.js"></script>
+    <script src="./language.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
